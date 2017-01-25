@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <body>
+    <div id="app"></div>
+          {% verbatim %}
+            <script type=text/javascript src=/static/js/manifest.js></script>
+            <script type=text/javascript src=/static/js/vendor.js></script>
+            <script type=text/javascript src=/static/js/app.js></script>
+          {% endverbatim %}
+        
+          {% verbatim %}
+            <!-- <script type="text/javascript" src="http://localhost:8080/app.js"></script> -->
+          {% endverbatim %}
+        
+  </body>
+  {% endblock %}
