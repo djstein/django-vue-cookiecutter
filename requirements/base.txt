@@ -26,6 +26,14 @@ Pillow==4.0.0
 # Well-built with regular release cycles!
 django-allauth==0.30.0
 
+# Django REST Framework
+djangorestframework==3.5.3
+
+# Django REST Auth
+django-rest-auth
+
+# JSON Web Token Authentication
+djangorestframework-jwt==1.9.0
 
 # Python-PostgreSQL Database Adapter
 psycopg2==2.6.2

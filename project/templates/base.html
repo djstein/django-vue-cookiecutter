@@ -55,13 +55,33 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+
+  <form role="form" action="{% url 'rest_logout' %}">{% csrf_token %}
+    <div class="form-group">
+      <label for="token" class="col-sm-2 control-label">User Token</label>
+      <div class="col-sm-4">
+        <input name="token" type="text" class="form-control" id="token" placeholder="Token">
+        <p class="help-block">Token received after login</p>
+      </div>
+    </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Logout</button>
+    </div>
+  </div>
+
+  <div class="form-group"></div>
+</form>
+
+
                 </li>
               {% else %}
                 <li class="nav-item">
                   <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
                 </li>
                 <li class="nav-item">
-                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                  <a id="log-in-link" class="nav-link" href="{% url 'rest_login' %}">{% trans "Sign In" %}</a>
                 </li>
               {% endif %}
             </ul>
