@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <globalnav></globalnav>
+    <login></login>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Globalnav from './components/Globalnav'
+import Login from './components/Login'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Globalnav,
+    Login
   }
 }
 </script>
@@ -18,11 +21,9 @@ export default {
 <style>
 
 #app {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  /*font-family: 'Roboto', Helvetica, Arial, sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #424242;
-  padding-top: 30px;
-  text-align: center;
 }
 </style>

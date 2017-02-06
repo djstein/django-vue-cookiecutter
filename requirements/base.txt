@@ -32,6 +32,9 @@ djangorestframework==3.5.3
 # Django REST Auth
 django-rest-auth
 
+# Allow CORS
+django-cors-headers
+
 # JSON Web Token Authentication
 djangorestframework-jwt==1.9.0
 
@@ -47,9 +50,3 @@ pytz==2016.10
 # Redis support
 django-redis==4.7.0
 redis>=2.10.5
-
-
-
-
-
-# Your custom requirements go here

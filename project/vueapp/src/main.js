@@ -2,30 +2,17 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Axios from 'axios'
+Vue.use(Axios)
 
-var VueMaterial = require('vue-material')
-import 'vue-material/dist/vue-material.css'
+Vue.prototype.$http = Axios
 
-Vue.use(VueMaterial)
+import auth from './auth'
 
-Vue.material.registerTheme('default', {
-  primary: {
-    color: 'green',
-    hue: 200
-  },
-  accent: {
-    color: 'blue',
-    hue: 500
-  },
-  warn: {
-    color: 'green',
-    hue: 200
-  },
-  background: {
-    color: 'white',
-    hue: 200
-  }
-})
+// Vue.http.headers.common['Authorization'] = 'Bearer ' + window.localStorage.getItem('id_token')
+
+// Check the user's auth status when the app starts
+auth.checkAuth()
 
 /* eslint-disable no-new */
 new Vue({
@@ -33,3 +20,6 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+// var x = Vue.http.get('http://localhost:8000/rest-auth/login/')
+// console.log(x)

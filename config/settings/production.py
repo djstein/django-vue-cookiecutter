@@ -216,5 +216,17 @@ RAVEN_CONFIG = {
 # Custom Admin URL, use {% url 'admin:index' %}
 ADMIN_URL = env('DJANGO_ADMIN_URL')
 
-# Your production stuff: Below this line define 3rd party library settings
+# CORS For production allow only the following
+# ------------------------------------------------------------------------------
+CORS_ORIGIN_WHITELIST = (
+    # 'google.com',
+    # 'hostname.example.com',
+    'localhost:8000',
+    # '127.0.0.1:9000'
+)
+
+# TESTING
+# ------------------------------------------------------------------------------
+
+# Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------

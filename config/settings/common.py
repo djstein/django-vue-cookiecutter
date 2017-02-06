@@ -41,6 +41,7 @@ THIRD_PARTY_APPS = (
     'rest_framework', # REST api
     'rest_framework.authtoken', # REST api token
     'rest_auth',
+    'corsheaders',
 
     'allauth',  # registration
     'allauth.account',  # registration
@@ -63,6 +64,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # Needed for CORS
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware', # Removed such that JWT needed instead
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -272,5 +274,5 @@ REST_FRAMEWORK = {
 
 REST_USE_JWT = True
 
-# Your common stuff: Below this line define 3rd party library settings
+# Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
