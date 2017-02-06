@@ -9,8 +9,6 @@ Vue.prototype.$http = Axios
 
 import auth from './auth'
 
-// Vue.http.headers.common['Authorization'] = 'Bearer ' + window.localStorage.getItem('id_token')
-
 // Check the user's auth status when the app starts
 auth.checkAuth()
 
@@ -20,6 +18,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
-
-// var x = Vue.http.get('http://localhost:8000/rest-auth/login/')
-// console.log(x)

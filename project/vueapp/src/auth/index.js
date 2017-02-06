@@ -1,20 +1,17 @@
 const API_URL = 'http://localhost:8000/'
 const LOGIN_URL = API_URL + 'rest-auth/login/'
-const LOGOUT = API_URL + 'rest-auth/logout/'
-// const SIGNUP_URL = API_URL + 'users/'
+const LOGOUT_URL = API_URL + 'rest-auth/logout/'
+// const REGISTRATION_URL = API_URL + 'registration/'
 
 export default {
-
   user: {
     authenticated: false
   },
 
-  login (context, creds) {
-    context.$http.post(LOGIN_URL, {
-      username: 'test',
-      password: 'test1234'
-    })
-        .then(function (response) {
+  login (context, data) {
+    console.log(this.user)
+    context.$http.post(LOGIN_URL, data)
+        .then(response => {
           console.log(response.data)
           window.localStorage.setItem('id_token', response.data.token)
           this.user.authenticated = true
@@ -24,18 +21,8 @@ export default {
         })
   },
 
-  // signup (context, creds, redirect) {
-  //   this.http.post(SIGNUP_URL, creds, (data) => {
-  //     window.localStorage.setItem('id_token', data.id_token)
-
-  //     this.user.authenticated = true
-  //   }).error((err) => {
-  //     this.error = err
-  //   })
-  // },
-
   logout (context) {
-    context.$http.post(LOGOUT)
+    context.$http.post(LOGOUT_URL)
         .then(function (response) {
           console.log(response.data)
         })
